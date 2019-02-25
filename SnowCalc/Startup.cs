@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SnowCalc.Services;
 
 namespace SnowCalc
 {
@@ -31,6 +32,7 @@ namespace SnowCalc
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<SnowCalcService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
